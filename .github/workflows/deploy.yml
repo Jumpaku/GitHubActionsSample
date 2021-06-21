@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: ': >| output.txt && docker-compose up --build'
       - run: 'cat output.txt'
+      - run: 'cat README.md'
 
