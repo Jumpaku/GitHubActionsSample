@@ -5,3 +5,5 @@ services:
         build: './'
         volumes: 
             - "./output.txt:/output.txt"
+        environment:
+            SECRET_VALUE: "${SUPER_SECRET}"
