@@ -1,10 +1,14 @@
 name: deploy
-on: [push]
+on:
+  push:
+    branches:
+    - main
+    - release/*
 jobs:
   docker-action-job:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: ': >| output.txt && docker-compose up --build'
-      - run: 'cat output.txt | sed -e "s/^*::set-output/::set-output/g"'
+      - run: 'cat output.txt'
 
