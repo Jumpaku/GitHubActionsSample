@@ -3,5 +3,8 @@
 #~echo "Hello $1"
 time=$(date)
 echo "$time"
-num=$(echo "$SECRET_VALUE" | wc )
-echo "${num} $SECRET_VALUE"
+if [ -z "$SECRET_VALUE" ]; then 
+  echo "= 0"
+else
+  echo "> 1"
+fi
