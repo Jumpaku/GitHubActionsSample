@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: 'echo "Hello" >| output.txt && docker-compose up --build'
+      - run: 'echo "Hello" >| output.txt'
+      - run: 'docker-compose up --build'
       - run: 'cat output.txt'
       - run: 'cat README.md'
 
