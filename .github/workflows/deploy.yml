@@ -18,6 +18,8 @@ jobs:
       - run: 'wc output.txt'
       - run: 'ls -al'
       - run: 'docker-compose up --build'
+        env:
+          SUPER_SECRET: ${{ secrets.MY_SECRET_NAME }}
       - run: 'cat output.txt'
       - run: 'cat README.md'
     
