@@ -1,0 +1,7 @@
+version: '3'
+
+services: 
+    deploy:
+        build: './'
+        volumes: 
+            - "./output.txt:/output.txt"
