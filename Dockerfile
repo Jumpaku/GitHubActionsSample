@@ -7,4 +7,4 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 # dockerコンテナが起動する際に実行されるコードファイル (`entrypoint.sh`)
-ENTRYPOINT ["/bin/sh", "-c", "/entrypoint.sh > output.txt"]
+ENTRYPOINT ["/entrypoint.sh"]
