@@ -12,7 +12,7 @@ jobs:
       - run: 'echo "Hello" >| output.txt'
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secret.MY_SECRET_NAME }}
+          SUPER_SECRET: ${{ secrets.MY_SECRET_NAME }}
         run: echo "${SUPER_SECRET}" > output.txt
       - run: 'cat output.txt'
       - run: 'ls -al'
