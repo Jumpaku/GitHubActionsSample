@@ -10,9 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: 'echo "Hello" >| output.txt'
-      - env:
+      - shell: bash
+        env:
           SUPER_SECRET: ${{ secret.MY_SECRET_NAME }}
-        run: 'echo "${SUPER_SECRET}" > output.txt'
+        run: echo "${SUPER_SECRET}" > output.txt
       - run: 'cat output.txt'
       - run: 'ls -al'
       - run: 'docker-compose up --build'
