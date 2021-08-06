@@ -15,4 +15,4 @@ jobs:
     - shell: bash
       env:
           BRANCH_NAME: ${{github.head_ref}}
-      run: COMMAND="echo ${BRANCH_NAME}" docker run ubuntu bash -c "${COMMAND}"
+      run: COMMAND="echo X${BRANCH_NAME}Y" docker run ubuntu bash -c "${COMMAND}"
