@@ -1,0 +1,16 @@
+
+name: check_pr
+on:
+  - push:
+      branches:
+      - main
+      - develop
+      - release/*
+  - pull_request
+jobs:
+  docker-action-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - shell: bash
+      - run: 'docker run ubuntu bach -c "echo Hello"'
