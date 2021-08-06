@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - env:
+    - shell: bash
+      env:
           BRANCH_NAME: ${{github.head_ref}}
-      run: docker run ubuntu bash -c "echo ${BRANCH_NAME}"
+      run: COMMAND="echo ${BRANCH_NAME}" docker run ubuntu bash -c "${COMMAND}"
