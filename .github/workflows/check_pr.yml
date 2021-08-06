@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: 'docker run ubuntu bash -c "echo Hello"'
+    - env:
+          BRANCH_NAME: ${{github.head_ref}}
+      run: docker run ubuntu bash -c "echo ${BRANCH_NAME}"
