@@ -1,4 +1,4 @@
 # GitHubActionsSample
 
-deploy
-check_pr
+* deploy
+* check_pr
