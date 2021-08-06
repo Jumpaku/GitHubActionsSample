@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - shell: bash
-      - run: 'docker run ubuntu bach -c "echo Hello"'
+      - run: 'docker run ubuntu bash -c "echo Hello"'
