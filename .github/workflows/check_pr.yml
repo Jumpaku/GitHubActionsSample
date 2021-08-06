@@ -3,9 +3,9 @@ on:
   pull_request:
   push:
     branches:
-    - main
-    - develop
-    - release/*
+      - main
+      - develop
+      - release/*
 jobs:
   docker-action-job:
     runs-on: ubuntu-latest
