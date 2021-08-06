@@ -15,5 +15,5 @@ jobs:
     - run: |
         echo ${{github.base_ref}}
         echo ${{github.head_ref}}
-        git branch -a
+        git branch
       
