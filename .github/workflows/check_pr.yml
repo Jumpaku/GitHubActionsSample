@@ -15,5 +15,12 @@ jobs:
     - run: |
         echo ${{github.base_ref}}
         echo ${{github.head_ref}}
-        git branch -a
-      
+        git branch | grep '*' | sed -e 's|\*||g'
+    - name: Extract branch name
+      shell: bash
+      run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+      id: extract_branch
+    - name: Print branch name
+      env:
+        BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
+      run: echo $BRANCH_NAME
