@@ -1,11 +1,12 @@
 name: check_pr
 on:
   pull_request:
+  workflow_dispatch:
   push:
     branches:
-      - main
-      - develop
-      - release/*
+    - main
+    - develop
+    - release/*
 jobs:
   docker-action-job:
     runs-on: ubuntu-latest
